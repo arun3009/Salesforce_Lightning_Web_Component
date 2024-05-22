@@ -1,0 +1,23 @@
+<template>
+    <lightning-card title="Loop component">
+        <template for:each={carList} for:item="car">
+            <div key={car}>
+                <ul class="slds-has-dividers_around-space">
+                    <li class="slds-item">{car}</li>  
+                </ul> 
+            </div>
+             
+        </template>
+    </lightning-card>
+
+    <lightning-card title="iterator component">
+        <template iterator:car={carList}>
+            <div key={car.value}>
+                <ul class="slds-has-dividers_around-space slds-p-around_medium ">
+                    <li class="slds-item slds-theme_shade">{car.value}</li>  
+                </ul> 
+            </div>
+             
+        </template>
+    </lightning-card>
+</template>

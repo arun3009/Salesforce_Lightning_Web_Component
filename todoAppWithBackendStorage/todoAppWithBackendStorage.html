@@ -1,0 +1,95 @@
+<template>
+    <div class="slds-grid slds-gutters">
+        <div class="slds-col">
+            <lightning-card title="Add New Task">
+                <div class="slds-var-p-around_medium">
+                    <lightning-input
+                    type="text" 
+                    label="Enter Task"
+                    required="true"
+                    placeholder="Enter Task Name"
+                    message-when-value-missing="Kindly enter the task name"
+                    onchange={changeHandler}
+                    name="taskName"
+                    value={taskName}
+                    class = "taskName">
+                    
+                    </lightning-input>
+                </div>
+                <div class="slds-var-p-around_medium">
+                    <lightning-input
+                    type="date" 
+                    label="Set End Date"
+                    placeholder="Enter Task end date"
+                    field-level-help = "Default End Date is Today"
+                    onchange={changeHandler}
+                    name="taskEndDate"
+                    value={taskEndDate}>
+        
+                    </lightning-input>
+                </div>
+                <div class = "slds-var-p-around_medium">
+                    <lightning-button 
+                    variant="brand" 
+                    label="Reset" 
+                    class="slds-var-p-around_small"
+                    onclick={resetHandler}>
+                    </lightning-button>
+
+                    <lightning-button 
+                    variant="brand" 
+                    label="AddTask" 
+                    class="slds-var-p-around_small"
+                    onclick={addTaskHandler}>
+                    </lightning-button>
+
+                </div>
+            </lightning-card>
+        </div>
+        <div class="slds-col">
+            <lightning-card title="To Do List">
+                <div class="slds-var-p-around_small ">
+                    <template for:each = {incompleteTask} for:item = "currentItem" >
+                        <div class="slds-box slds-theme_shade slds-grid slds-wrap taskColor"
+                            key={currentItem.taskId}>
+                            <div class="slds-col slds-size_2-of-3">
+                                <p>{currentItem.taskName}</p>
+                                <p><lightning-formatted-date-time value={currentItem.taskEndDate}></lightning-formatted-date-time></p>
+                            </div>
+                            <div class="slds-col slds-size_1-of-3">
+                                <lightning-button-icon 
+                                    icon-name="utility:delete"    
+                                    alternative-text="Delete"
+                                    title="Delete"
+                                    onclick = {deleteHandler}
+                                    name = {currentItem.taskId}>
+                                </lightning-button-icon>
+                                <lightning-button-icon 
+                                    icon-name="utility:check"    
+                                    alternative-text="completed"    
+                                    title="complete"
+                                    onclick = {completedHandler}
+                                    class="slds-p-left_x-small"
+                                    name = {currentItem.taskId}>
+                                </lightning-button-icon>
+                            </div>
+                        </div>
+                    </template>
+                </div>
+            </lightning-card>
+        </div>
+        <div class="slds-col">
+            <lightning-card title="Completed Items">
+                <div class="slds-var-p-around_small ">
+                    <template for:each = {completedTask} for:item = "currentItem">
+                        <div class="slds-box slds-theme_shade taskColor"
+                            key={currentItem.taskId}>
+                                <p>{currentItem.taskName}</p>
+                                <p><lightning-formatted-date-time value={currentItem.taskEndDate}></lightning-formatted-date-time></p>
+                        </div>
+                    </template>
+                </div>
+            </lightning-card>
+        </div>
+    </div>
+</template>

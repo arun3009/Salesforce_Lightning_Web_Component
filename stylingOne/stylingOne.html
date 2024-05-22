@@ -1,0 +1,10 @@
+<template>
+    <lightning-card title="style one">
+        <div class="slds-var-m-around_medium">
+            <lightning-input type="number" label="percentage" value={percent} onkeyup={changetHandler}></lightning-input>
+            <div class="wrapper">
+                <div class="skills css" style={getstyle}>{percent}</div>
+            </div>
+        </div>
+    </lightning-card>
+</template>
