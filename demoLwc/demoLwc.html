@@ -1,0 +1,18 @@
+<template>
+    <lightning-input type="number" name="num1" label="num1" onchange={addHandler}></lightning-input>
+    <lightning-input type="number" name="num2" label="num2" onchange={addHandler}></lightning-input>
+    <lightning-button 
+    variant="brand" 
+    label="add" 
+    title="add" 
+    onclick={handleClick} 
+    class="slds-var-m-left_x-small"></lightning-button>
+    
+    <template if:true={isVisible}>
+
+        <div>The sum {num1} and {num2} number is {sumOfTwoNumbers}</div>
+        
+    </template>
+    
+    
+</template>

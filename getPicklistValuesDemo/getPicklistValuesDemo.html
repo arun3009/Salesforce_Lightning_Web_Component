@@ -1,0 +1,27 @@
+<template>
+    <lightning-card title = "getPicklistValuesDemo">
+        <lightning-combobox
+            name="progress"
+            label="Industry"
+            value={value}
+            placeholder="Select Industry"
+            options={selectedValue}
+            onchange={handleChange} >
+        </lightning-combobox>
+
+    <p>Selected value is: {value}</p>
+    </lightning-card>
+
+    <lightning-card title = "getPicklistValuesDemo">
+        <!-- <template for:each = {picValues.data} for:item = "pic">
+            <p key = {pic.picklistFieldValues}>{pic.picklistFieldValues}</p>
+        </template> -->
+        <!-- <p>{picValues.data}</p> -->
+        <!-- <lightning-combobox
+            name="progress"
+            label="Industry"
+            placeholder="Select Industry"
+            options={picValues.data.Industry.values}>
+        </lightning-combobox> -->
+    </lightning-card>
+</template>

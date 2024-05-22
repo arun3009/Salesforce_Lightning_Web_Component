@@ -1,0 +1,16 @@
+<template>
+    <lightning-card title = "getObjectInfoDemo">
+        <template lwc:if ={accData}>
+            <!-- <div class = "slds-var-p-around_medium">
+                <p>Account object Api name : {accData.apiName}</p>
+                <p>Account object Label : {accData.label}</p>
+            </div> -->
+            <div class = "slds-var-p-around_medium">
+                <p>Account Fields Name</p>
+                <template for:each = {printpicklistField} for:item = "field">
+                    <p key = {field.apiName}>{field.length}</p>
+                </template>
+            </div>
+        </template>
+    </lightning-card>
+</template>
