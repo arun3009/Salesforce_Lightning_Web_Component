@@ -1,0 +1,58 @@
+<template>
+    <!-- <div>Hello {name}</div>
+    <div>Welcome to LWC Fundamentals </div> -->
+    <lightning-card title="First component">
+        <lightning-input type="text" label="Enter the course name" onkeyup={changehandler}></lightning-input>
+        <lightning-input type="text" label="Enter the your name" onkeyup={namehandler}></lightning-input>
+        <lightning-button label="Click" title="Non-primary action" onclick={handleClick} class="slds-var-m-left_x-small"></lightning-button>
+        <template lwc:if={isVisible}>
+            <div>Hello my name is {name} and I am learning {learningTitle}</div>
+        </template>
+        <template lwc:else>
+            This is template two.
+        </template>
+    </lightning-card>
+        
+        
+    
+    <lightning-card title="track component">
+        <lightning-input type="text" label="Enter the city name" onkeyup={trackhandler}></lightning-input>
+        <div>{address.city} is my working location</div>
+    </lightning-card>
+
+    <lightning-card title="Getter component">
+        <div>{username} is my firstname</div>
+    </lightning-card>
+
+    <lightning-card title="Get Fullname">
+        <div>
+            <lightning-input
+            type="text" 
+            label="fname"
+            required="true"
+            placeholder="Enter your Firstname"
+            onchange={getFullname}>
+            
+            </lightning-input>
+        </div>
+        <div>
+            <lightning-input
+            type="text" 
+            label="lname"
+            required="true"
+            placeholder="Enter your Lastname"
+            onchange={getFullname}>
+
+            </lightning-input>
+        </div>
+        <div>
+            <lightning-button 
+            variant="base" 
+            label="Base" 
+            title="Looks like a link" 
+            onclick={fullName} >
+            </lightning-button>
+        </div>
+        <p>{fullname}</p>
+    </lightning-card>
+</template>
