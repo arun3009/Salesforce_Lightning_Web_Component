@@ -1,0 +1,47 @@
+<template>
+    <lightning-card title="Get Fullname">
+        <div class="slds-var-p-around_medium">
+            <lightning-input
+            type="text" 
+            label="fname"
+            required="true"
+            placeholder="Enter your Firstname"
+            onchange={getFullname}
+            value={fnames}>
+            
+            </lightning-input>
+        </div>
+        <div class="slds-var-p-around_medium">
+            <lightning-input
+            type="text" 
+            label="lname"
+            required="true"
+            placeholder="Enter your Lastname"
+            onchange={getFullname}
+            value={lnames}>
+
+            </lightning-input>
+        </div>
+        <div>
+            <lightning-button 
+            variant="base" 
+            label="Enter" 
+            title="Looks like a link" 
+            onclick={fullName} 
+            class="slds-m-left_x-small">
+            </lightning-button>
+
+            <lightning-button 
+            variant="base" 
+            label="Reset" 
+            title="Looks like a link" 
+            onclick={resetHandler} 
+            class="slds-m-left_x-small">
+            </lightning-button>
+        </div>
+        <div class="slds-var-p-around_medium">
+            <p>{fullnames}</p>
+        </div>
+        
+    </lightning-card>
+</template>
